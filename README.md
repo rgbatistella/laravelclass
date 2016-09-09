@@ -1,0 +1,2 @@
+# laravelclass
+laravel class
