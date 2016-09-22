@@ -1,13 +1,18 @@
 @extends("templates.app")
     @section("content")
-        @foreach($posts as $posts)
+        <div class="post-preview">
+        <div class="post-preview">
+        @foreach($posts as $post)
             <div class="post-preview">
-                 <a href="post.html">
-                      <h2 class="post-title">{{$posts['title']}}</h2>
-                      <h3 class="post-subtitle">{{$posts['content']}}</h3>
+                 <a href="{!! route('posts.edit', [$post->id]) !!}">
+                      <h2 class="post-title">{{$post->title}}</h2>
+                      <h3 class="post-subtitle">{{$post->content}}</h3>
                  </a>
-                 <p class="post-meta">{{$posts['comment']}}</p>
+                 <!--p class="post-meta">$posts->comment</p-->
             </div>
             <hr>
-    @endforeach
-@endsection
+        @endforeach
+        </DIV>
+        {{ $posts->links() }}
+        </DIV>
+    @endsection

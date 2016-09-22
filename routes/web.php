@@ -15,4 +15,8 @@
 });*/
 
 
-Route::get('/', 'PostsController@index');
+Route::get('/', ['as'=>'posts.index', 'uses'=>'PostsController@index']);
+Route::get('/create', ['as'=>'posts.create', 'uses'=>'PostsController@create']);
+Route::post('/store', ['as'=>'posts.store', 'uses'=>'PostsController@store']);
+Route::get('/edit/{post_id}', ['as'=>'posts.edit', 'uses'=>'PostsController@edit']);
+Route::patch('/update/{post_id}', ['as'=>'posts.update', 'uses'=>'PostsController@update']);
